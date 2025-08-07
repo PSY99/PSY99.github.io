@@ -1,4 +1,4 @@
-primary_name: "Zian Luo"
+primary_name: "Zian Luo (罗子安)"
 secondary_name: ""
 navbar_name: "Zian Luo"
 
@@ -27,7 +27,7 @@ orcid: 0009-0003-5057-7764
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I'm Zian Luo (罗子安), a second-year graduate student at Xi'an Jiaotong University. I'm a member of the MOE KLINNS Lab, under the supervision of <a href="https://gr.xjtu.edu.cn/en/web/yangliu/home_en" target="_blank">Prof. Yang Liu</a>, <a href="https://gr.xjtu.edu.cn/en/web/tingliu/home" target="_blank">Prof. Ting Liu</a>. I received his B.S. degree in Automation from Xi'an Jiaotong University in 2023.
+    I'm Zian Luo, a second-year graduate student at Xi'an Jiaotong University. I'm a member of the MOE KLINNS Lab, under the supervision of <a href="https://gr.xjtu.edu.cn/en/web/yangliu/home_en" target="_blank">Prof. Yang Liu</a>, <a href="https://gr.xjtu.edu.cn/en/web/tingliu/home" target="_blank">Prof. Ting Liu</a>. I received his B.S. degree in Automation from Xi'an Jiaotong University in 2023.
   </p>
   <p>
     My research focuses on log analysis. Currently, I am exploring multi-source log correlation and security event extraction.
