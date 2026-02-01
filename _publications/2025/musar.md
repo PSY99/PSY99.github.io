@@ -17,6 +17,6 @@ authors:
   - Haichuan Zhang
   - Ting Liu#
 links:
-  # Paper: https://www.sciencedirect.com/science/article/abs/pii/S0950705125017514
+  Paper: https://ieeexplore.ieee.org/abstract/document/11352469
   Code: https://github.com/zisenXu/MuSAR
 ---
