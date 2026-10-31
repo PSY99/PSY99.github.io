@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-5">
+            <div class="card-body profile-body">
                 <div class="row">
                     <div class="col">
                         {% if site.data.profile.portrait_url %}
@@ -51,7 +51,7 @@
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col">
+                    <div class="col profile-links">
                         <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
                             <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
                         </a>

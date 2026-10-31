@@ -24,6 +24,9 @@ experience:
     position: 研究助理
     date: 2026.08 — 至今
 awards:
+  - name: 校级特等学业奖学金
+    date: 2026
+    highlight: true
   - name: 第十八届全国大学生软件创新大赛二等奖
     date: 2025
   - name: 西安交通大学优秀研究生干部

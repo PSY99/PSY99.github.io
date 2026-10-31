@@ -90,3 +90,71 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+/* Shared bilingual homepage layout. */
+body {
+    color: #263449;
+    font-family: "Lato", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.65;
+}
+
+a { color: #23649a; }
+a:hover { color: #16436a; }
+a:focus-visible, summary:focus-visible {
+    outline: 2px solid #23649a;
+    outline-offset: 4px;
+}
+.profile-body { padding: 2.5rem; }
+.profile-body h1 { letter-spacing: -.035em; }
+.profile-body h1 small { color: #65748a; font-size: .65em; }
+.text-profile-position { color: #65748a; }
+.text-profile-bio { line-height: 1.85; }
+.profile-links { display: flex; flex-wrap: wrap; gap: .65rem 1rem; }
+.profile-links a { padding-right: 0 !important; }
+.profile-links .email-text { font-family: inherit; }
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+.background-panel {
+    min-width: 0;
+    padding: 1.75rem;
+    border: 1px solid #e5eaf0;
+    border-radius: .8rem;
+    background: #fff;
+}
+.section-title { font-size: 1.1rem; margin-bottom: 1.4rem; color: #1f3048; }
+.career-list, .award-list { list-style: none; padding: 0; margin: 0; }
+.career-item { display: flex; gap: .9rem; padding-bottom: 1.4rem; }
+.career-item:last-child { padding-bottom: 0; }
+.career-logo { width: 32px; height: 32px; object-fit: contain; margin-top: .2rem; }
+.career-content { min-width: 0; }
+.career-content h3 { font-size: .98rem; line-height: 1.5; margin: 0 0 .2rem; }
+.career-position { font-size: .9rem; }
+.career-date { color: #69788b; font-size: .8rem; margin-top: .3rem; }
+.award-list li {
+    display: grid;
+    grid-template-columns: 4.6rem 1fr;
+    gap: .7rem;
+    padding: .65rem 0;
+    border-bottom: 1px solid #eef1f5;
+    font-size: .85rem;
+    line-height: 1.6;
+}
+.award-list li:first-child { padding-top: 0; }
+.award-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.award-year { color: #69788b; font-variant-numeric: tabular-nums; }
+.award-highlight > span:last-child { color: #23649a; font-weight: 700; }
+.publication-section-title { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.publication-section-title > a { margin-left: auto; font-size: .8rem; font-weight: 400; }
+.publication-abstract { margin: .55rem 0; font-size: .85rem; }
+.publication-abstract summary { color: #53687e; cursor: pointer; width: fit-content; }
+.publication-abstract p { color: #536174; margin: .5rem 0; line-height: 1.75; }
+@media (max-width: 767.98px) {
+    .background-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .profile-body, .background-panel { padding: 1.4rem; }
+    .profile-body h1 { font-size: 1.9rem; }
+    .profile-links a { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+}
+
