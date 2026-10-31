@@ -20,6 +20,8 @@ description: "Zian Luo (罗子安), Ph.D. student at Xi'an Jiaotong University a
 
 # Build settings
 markdown: kramdown
+exclude:
+  - scripts
 plugins:
   - jekyll-email-protect
 
