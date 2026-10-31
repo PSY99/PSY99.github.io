@@ -1,0 +1,39 @@
+{% assign seo_description = page.description | default: site.description %}
+{% assign canonical_url = page.url | replace: 'index.html', '' | absolute_url %}
+<title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<link rel="canonical" href="{{ canonical_url }}">
+{% if page.alternate_en and page.alternate_zh %}
+<link rel="alternate" hreflang="en" href="{{ page.alternate_en | absolute_url }}">
+<link rel="alternate" hreflang="zh-CN" href="{{ page.alternate_zh | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ page.alternate_en | absolute_url }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:image" content="{{ site.data.profile.portrait_url | absolute_url }}">
+<meta property="og:image:alt" content="{{ site.data.profile.primary_name | escape }}">
+<meta name="twitter:card" content="summary">
+{% if page.profile_page %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": {{ canonical_url | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ site.data.profile.primary_name | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }},
+    "image": {{ site.data.profile.portrait_url | absolute_url | jsonify }},
+    "description": {{ seo_description | jsonify }},
+    "sameAs": [
+      "https://github.com/{{ site.data.profile.github }}",
+      "https://orcid.org/{{ site.data.profile.orcid }}",
+      "https://scholar.google.com/citations?user={{ site.data.profile.gscholar }}"
+    ]
+  }
+}
+</script>
+{% endif %}

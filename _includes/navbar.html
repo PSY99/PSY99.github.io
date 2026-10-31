@@ -1,17 +1,28 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb-5 shadow-sm">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-        <a class="navbar-brand"><strong>{{site.data.profile.navbar_name}}</strong></a>
-        <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-map"></i> Menu
+        <a class="navbar-brand" href="{% if page.lang == 'zh-CN' %}{{ '/zh/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}"><strong>{% if page.lang == 'zh-CN' %}罗子安{% else %}{{site.data.profile.navbar_name}}{% endif %}</strong></a>
+        <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="{% if page.lang == 'zh-CN' %}切换导航{% else %}Toggle navigation{% endif %}">
+            <i class="fas fa-map"></i> {% if page.lang == 'zh-CN' %}菜单{% else %}Menu{% endif %}
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                {% for item in site.data.navigation.pages %}
-                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
+                {% assign navigation = site.data.navigation.pages %}
+                {% if page.lang == 'zh-CN' %}{% assign navigation = site.data.navigation.pages_zh %}{% endif %}
+                {% for item in navigation %}
+                <li class="nav-item {% if item.key == page.navbar_title %}active{% endif %}">
                     <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
                 </li>
                 {% endfor %}
+                {% if page.alternate_en and page.alternate_zh %}
+                <li class="nav-item">
+                    {% if page.lang == 'zh-CN' %}
+                    <a class="nav-link" lang="en" hreflang="en" href="{{ page.alternate_en | relative_url }}">English</a>
+                    {% else %}
+                    <a class="nav-link" lang="zh-CN" hreflang="zh-CN" href="{{ page.alternate_zh | relative_url }}">中文</a>
+                    {% endif %}
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

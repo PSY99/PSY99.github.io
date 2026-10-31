@@ -1,0 +1,36 @@
+primary_name: "罗子安"
+secondary_name: "Zian Luo"
+positions:
+  - name: 西安交通大学博士研究生
+    logo: /assets/images/badges/xjtu.png
+short_bio: >-
+  <p>我是罗子安，目前是西安交通大学博士四年级学生，在 MOE KLINNS 实验室开展研究，导师为
+  <a href="https://gr.xjtu.edu.cn/en/web/yangliu/home_en" target="_blank">Yang Liu 教授</a>和
+  <a href="https://gr.xjtu.edu.cn/en/web/tingliu/home" target="_blank">Ting Liu 教授</a>。
+  我于 2023 年获得西安交通大学自动化专业学士学位。自 2026 年 8 月起，我同时在香港大学担任研究助理，由 Chen Ho 教授指导。</p>
+  <p>我的研究聚焦于日志分析与漏洞发现，目前主要探索多源日志关联、安全事件提取和自动化漏洞挖掘。</p>
+education:
+  - name: 西安交通大学
+    logo: /assets/images/badges/xjtu.png
+    position: "MOE KLINNS 实验室<br/>博士研究生"
+    date: 2023.09 — 至今
+  - name: 西安交通大学
+    logo: /assets/images/badges/xjtu.png
+    position: 自动化专业学士
+    date: 2019.09 — 2023.07
+experience:
+  - name: 香港大学
+    logo: /assets/images/badges/hku.png
+    position: 研究助理
+    date: 2026.08 — 至今
+awards:
+  - name: 第十八届全国大学生软件创新大赛二等奖
+    date: 2025
+  - name: 西安交通大学优秀研究生干部
+    date: 2023
+  - name: 第二十届中国研究生数学建模竞赛二等奖
+    date: 2023
+  - name: 西安交通大学一等奖学金
+    date: "2021, 2022"
+  - name: 第十三届全国大学生数学竞赛（非数学类）二等奖
+    date: 2021

@@ -1,3 +1,5 @@
+{% assign localized_profile = site.data.profile %}
+{% if page.lang == 'zh-CN' %}{% assign localized_profile = site.data.profile_zh %}{% endif %}
 <div class="row">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
@@ -9,7 +11,8 @@
                         <div class="figure float-right ml-4 mb-4 d-none d-md-block">
                             <img 
                                 src="{{ site.data.profile.portrait_url | relative_url }}" 
-                                class="figure-img img-fluid img-thumbnail" 
+                                class="figure-img img-fluid img-thumbnail"
+                                alt="{{ localized_profile.primary_name | escape }}"
                                 style="height: 200px;"
                                 data-toggle="tooltip" 
                                 data-placement="top" 
@@ -18,19 +21,19 @@
                         {% endif %}
 
                         <div class="d-flex">
-                            <div class="h1 font-weight-normal">
-                                {{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small>
-                            </div>
+                            <h1 class="h1 font-weight-normal">
+                                {{ localized_profile.primary_name }} <small>{{ localized_profile.secondary_name }}</small>
+                            </h1>
                             {% if site.data.profile.portrait_url %}
                             <div class="ml-auto d-md-none">
                                 <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}">
-                                    <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle" style="height: 48px;" alt="Portrait">
+                                    <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded-circle" style="height: 48px;" alt="{{ localized_profile.primary_name | escape }}">
                                 </a>
                             </div>
                             {% endif %}
                         </div>
                         <div class="text-profile-position">
-                            {% for position in site.data.profile.positions %}
+                            {% for position in localized_profile.positions %}
                             {% if position.logo -%}
                             <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
                             {%- endif %}
@@ -38,10 +41,10 @@
                             {% endfor %}
                         </div>
                         <div class="text-profile-bio mt-3" {% if site.data.profile.short_bio_text_justify %}style="text-align: justify;"{% endif %}>
-                            {{ site.data.profile.short_bio }}
+                            {{ localized_profile.short_bio }}
                         </div>
                         {% if site.data.profile.cv_link %}
-                            <a target="_blank" href="{{ site.data.profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i> Curriculum Vitae</a> <br/>
+                            <a target="_blank" href="{{ site.data.profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i> {% if page.lang == 'zh-CN' %}个人简历{% else %}Curriculum Vitae{% endif %}</a> <br/>
                         {% endif %}
                     </div>
         

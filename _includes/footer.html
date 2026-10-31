@@ -3,7 +3,7 @@
         <div class="row my-3">
             <div class="col-6">
                 <div class="text-muted">
-                    <i>Last updated: {{ "now" | date: "%b %Y" }}</i>
+                    <i>{% if page.lang == 'zh-CN' %}更新于：{{ "now" | date: "%Y 年 %m 月" }}{% else %}Last updated: {{ "now" | date: "%b %Y" }}{% endif %}</i>
                 </div>
             </div>
             <div class="col-6">

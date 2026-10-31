@@ -50,11 +50,11 @@
 {%- if has_eq_contrib or has_corresponding %}
 <mark>(
     {%- if has_eq_contrib -%}
-        * <i> equal contribution</i>
+        * <i>{% if page.lang == 'zh-CN' %}共同贡献{% else %} equal contribution{% endif %}</i>
     {%- endif -%}
     {%- if has_corresponding -%}
         {%- if has_eq_contrib -%}, {% endif -%}
-        <sup>#</sup> <i> corresponding author</i>
+        <sup>#</sup> <i>{% if page.lang == 'zh-CN' %}通讯作者{% else %} corresponding author{% endif %}</i>
     {%- endif -%}
 )</mark>
 {%- endif -%}

@@ -1,14 +1,16 @@
+{% assign localized_profile = site.data.profile %}
+{% if page.lang == 'zh-CN' %}{% assign localized_profile = site.data.profile_zh %}{% endif %}
 <div class="row mt-3">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <div class="row" data-masonry='{"percentPosition": true }'>
-                    {% if site.data.profile.education %}
+                    {% if localized_profile.education %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Education</h6>
+                            <h6>{% if page.lang == 'zh-CN' %}教育经历{% else %}Education{% endif %}</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.education %}
+                                {% for item in localized_profile.education %}
                                 <li class="media mb-1">
                                     <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
                                     <div class="media-body">
@@ -26,12 +28,12 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.experience %}
+                    {% if localized_profile.experience %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Experience</h6>
+                            <h6>{% if page.lang == 'zh-CN' %}工作经历{% else %}Experience{% endif %}</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.experience %}
+                                {% for item in localized_profile.experience %}
                                 <li class="media mb-1">
                                     <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
                                     <div class="media-body">
@@ -49,12 +51,12 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.awards %}
+                    {% if localized_profile.awards %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Honors & Awards</h6>
+                            <h6>{% if page.lang == 'zh-CN' %}荣誉与奖励{% else %}Honors & Awards{% endif %}</h6>
                             <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
+                                {% for item in localized_profile.awards %}
                                 <li>
                                     <div class="d-flex">
                                         <div>{{ item.name }}</div>
